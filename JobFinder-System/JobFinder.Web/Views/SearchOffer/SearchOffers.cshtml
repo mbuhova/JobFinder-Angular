@@ -1,0 +1,91 @@
+﻿@model PagedList.IPagedList<JobFinder.Web.Models.OfferViewModels.SearchResultOfferViewModel>
+
+<div class="row">
+    <div class="default-form">
+        <div>
+            <h4>Search for job offers</h4>
+        </div>
+        @using (Html.BeginForm("OfferSearchResults", "SearchOffer", FormMethod.Get, new { @class = "form-horizontal", role = "form" }))
+        {
+            <div class="row form-group">
+                <div class="row">
+                    <div class="col-lg-offset-1">
+                        <label style="padding-left:15px">Select business sectors:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-lg-offset-1">
+                        <select id="BusinessSectors" multiple class="form-control">
+                            @foreach (var item in (IEnumerable<SelectListItem>)TempData["BusinessSectors"])
+                            {
+                                <option value=@item.Value>@item.Text</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-lg-4">
+                        <select multiple id="selectedSectors" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row form-group">
+                <div class="col-lg-4 col-lg-offset-1" style="padding-left:0">
+                    <label>Select city: </label>
+                    @Html.DropDownList("Town", (IEnumerable<SelectListItem>)TempData["Towns"], String.Empty, new { @class = "form-control" })
+                </div>
+				<div class="col-lg-4" style="padding-left:30px">
+					<div class="row">
+						<label>Select types of offer:</label>
+					</div>
+					<div class="col-lg-5">
+						<div class="form-check">
+							<label class="form-check-label">
+								@Html.CheckBox("isPermanent")
+								Permanent
+							</label>
+						</div>
+						<div class="form-check">
+							<label class="form-check-label">
+								@Html.CheckBox("isTemporary")
+								Temporary
+							</label>
+						</div>
+					</div>
+					<div class="col-lg-5">
+						<div class="form-check">
+							<label class="form-check-label">
+								@Html.CheckBox("isFullTime")
+								Full time
+							</label>
+						</div>
+						<div class="form-check">
+							<label class="form-check-label">
+								@Html.CheckBox("isPartTime")
+								Part time
+							</label>
+						</div>
+					</div>
+                </div>
+            </div>
+            <br />
+            <div class="row form-group">
+                <div class="col-lg-offset-1">
+                    <label>Search by word: </label>
+                    <input type="text" name="Word" class="form-control" placeholder="Search by keyword" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-lg-offset-1">
+                    <button type="submit" class="btn btn-default">Search</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="@Url.Content("~/Scripts/controls.js")"></script>
+    <script>
+        Controls.multipleListControl('BusinessSectors', 'Sectors', 'selectedSectors');
+    </script>
+}

@@ -1,0 +1,13 @@
+﻿@model JobFinder.Web.Models.OfferViewModels.SearchResultOfferViewModel
+
+<div class="row offersList">
+    <div class="col-md-9">
+        <div>@Html.ActionLink(Model.Title, "OfferDetails", "PublicOffer", new { area = "", id = Model.Id }, new { @class = "btn btn-link offerHeader" })</div>
+        <span class="text-muted" style="font-size:17px"><em>@Model.Town</em></span>
+        <span>@Html.DisplayFor(m => m.DateCreated)</span>
+    </div>
+    <div class="col-md-3">
+        @Html.ActionLink(Model.CompanyName, "GetCompanyBusinessCard", "PublicOffer", new { area = "", id = Model.CompanyId }, new { @class = "offer-company-name" })
+    </div>
+</div>
+<br/>

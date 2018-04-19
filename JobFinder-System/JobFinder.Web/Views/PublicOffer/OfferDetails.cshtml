@@ -1,0 +1,54 @@
+﻿@model JobFinder.Web.Models.OfferViewModels.DetailsOfferViewModel
+@{
+    ViewBag.Title = "OfferDetails";
+}
+@if (Model.IsActive || (User.IsInRole("Person") && (bool)TempData["HasApplied"]))
+{
+    @Html.Partial("_OfferInDetailsPartial", (JobFinder.Web.Models.OfferViewModels.DetailsOfferViewModel)Model)
+
+    if (User.IsInRole("Person"))
+    {
+        <div class="row">
+            <div class="col-lg-4">
+                @if (!(bool)TempData["HasApplied"])
+                {
+                    @Html.ActionLink("Apply", "ApplyForOffer", "Apply", new { area = "Person", id = Model.Id }, new { @class = "btn btn-primary" })
+                }
+                else
+                {
+                    <span class="label label-success">YOU HAVE APPLIED FOR THIS OFFER.</span>
+                }
+            </div>
+            @if (Model.IsActive)
+            {
+                <div class="col-lg-offset-3">
+                    @Ajax.ActionLink(@TempData["FollowButtonText"].ToString(), "Follow", "FollowedOffers", new { area = "Person", id = Model.Id },
+                      new AjaxOptions
+                      {
+                          HttpMethod = "GET",
+                      }, new { @class = "btn btn-success", id = "followButton" })
+                </div>
+            }           
+        </div>
+    }
+}
+else
+{
+        <div class="row">
+            <div class="col-lg-2">
+                <img src="~/Files/warning.png" width="60" height="60" />
+            </div>
+            <div class="col-lg-5">
+                <h2>Expired job offer.</h2>
+            </div>
+        </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="@Url.Content("~/Scripts/controls.js")"></script>
+    <script>
+        Controls.changeButtonTextControl('followButton', "Follow", "Unfollow");
+    </script>
+}
+

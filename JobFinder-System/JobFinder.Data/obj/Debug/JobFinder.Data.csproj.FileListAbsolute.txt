@@ -1,0 +1,16 @@
+C:\Users\magdalina.buhova\Desktop\JobFinder\JobFinder-System\JobFinder-System\JobFinder.Data\bin\Debug\JobFinder.Data.dll.config
+C:\Users\magdalina.buhova\Desktop\JobFinder\JobFinder-System\JobFinder-System\JobFinder.Data\bin\Debug\JobFinder.Data.dll
+C:\Users\magdalina.buhova\Desktop\JobFinder\JobFinder-System\JobFinder-System\JobFinder.Data\bin\Debug\JobFinder.Data.pdb
+C:\Users\magdalina.buhova\Desktop\JobFinder\JobFinder-System\JobFinder-System\JobFinder.Data\bin\Debug\EntityFramework.dll
+C:\Users\magdalina.buhova\Desktop\JobFinder\JobFinder-System\JobFinder-System\JobFinder.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\magdalina.buhova\Desktop\JobFinder\JobFinder-System\JobFinder-System\JobFinder.Data\bin\Debug\JobFinder.Models.dll
+C:\Users\magdalina.buhova\Desktop\JobFinder\JobFinder-System\JobFinder-System\JobFinder.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\magdalina.buhova\Desktop\JobFinder\JobFinder-System\JobFinder-System\JobFinder.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\magdalina.buhova\Desktop\JobFinder\JobFinder-System\JobFinder-System\JobFinder.Data\bin\Debug\JobFinder.Models.pdb
+C:\Users\magdalina.buhova\Desktop\JobFinder\JobFinder-System\JobFinder-System\JobFinder.Data\bin\Debug\EntityFramework.xml
+C:\Users\magdalina.buhova\Desktop\JobFinder\JobFinder-System\JobFinder-System\JobFinder.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\magdalina.buhova\Desktop\JobFinder\JobFinder-System\JobFinder-System\JobFinder.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\magdalina.buhova\Desktop\JobFinder\JobFinder-System\JobFinder-System\JobFinder.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\magdalina.buhova\Desktop\JobFinder\JobFinder-System\JobFinder-System\JobFinder.Data\obj\Debug\JobFinder.Data.csprojResolveAssemblyReference.cache
+C:\Users\magdalina.buhova\Desktop\JobFinder\JobFinder-System\JobFinder-System\JobFinder.Data\obj\Debug\JobFinder.Data.dll
+C:\Users\magdalina.buhova\Desktop\JobFinder\JobFinder-System\JobFinder-System\JobFinder.Data\obj\Debug\JobFinder.Data.pdb

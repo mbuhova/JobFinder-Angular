@@ -1,0 +1,46 @@
+﻿@model JobFinder.Web.Models.OfferViewModels.DetailsOfferViewModel
+
+@{
+    ViewBag.Title = "Offer details";
+}
+
+@Html.Partial("~/Views/Shared/_OfferInDetailsPartial.cshtml")
+
+
+<div class="row" style="padding-top: 50px;">
+    <div class="col-lg-6">
+        @{
+            string buttonText = Model.IsActive ? "Mark as expired" : "EXPIRED OFFER";
+            string buttonClass = Model.IsActive ? "btn btn-danger" : "btn btn-danger disabled";
+        }
+        @Ajax.ActionLink(buttonText, "MarkAsExpired", "JobOffer", new { area = "Company", id = Model.Id },
+                new AjaxOptions
+                {
+                    HttpMethod = "GET"
+                }, new { @class = buttonClass, id = "expiredButton" })
+        <br />
+        <br />
+        <strong style="font-size:17px">You can't undo this action.</strong>
+        <br />
+        <span style="font-size:15px"><em>If you mark your offer as expired no one will be able to see it and apply for it.</em></span>
+    </div>
+    <div class="col-lg-6">
+        @Html.ActionLink("View applications", "GetApplications", "Application", new { area = "Company", id = Model.Id }, new { @class = "btn btn-primary view-appl-btn" })
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        function disableButton() {
+            var button = $('#expiredButton');
+
+            if (!button.hasClass('disabled')) {
+                button.addClass('disabled');
+                button.text('EXPIRED');
+            }
+        };
+
+        $('#expiredButton').click(disableButton);
+    </script>
+}
+

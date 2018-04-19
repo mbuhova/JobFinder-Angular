@@ -1,0 +1,120 @@
+﻿@model JobFinder.Web.Models.AccountViewModels.RegisterCompanyViewModel
+@{
+    ViewBag.Title = "Register Company";
+}
+@if (TempData["WaitingApproval"] != null)
+{
+    <div class="alert alert-dismissable alert-success">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>@TempData["WaitingApproval"]</strong>
+    </div>
+}
+<div class="row">
+    <div class="default-form">
+        @using (Html.BeginForm("RegisterCompany", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <h4>Create new company account</h4>
+            if (ViewBag.BulstatErrorMessage != null)
+            {
+                <div class="alert alert-dismissable alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>@ViewBag.BulstatErrorMessage.ToString()</strong>
+                </div>
+            }
+            string nameError = ViewBag.NameErrorMessage;
+            if (nameError != null)
+            {
+                <div class="alert alert-dismissable alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>@nameError</strong>
+                </div>
+            }
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(m => m.Bulstat, new { @class = "col-md-3 control-label" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(m => m.Bulstat, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.CompanyName, new { @class = "col-md-3 control-label" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(m => m.CompanyName, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Phone, new { @class = "col-md-3 control-label" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email, new { @class = "col-md-3 control-label" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Address, new { @class = "col-md-3 control-label" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.WebSite, new { @class = "col-md-3 control-label" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(m => m.WebSite, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.AboutUs, new { @class = "col-md-3 control-label" })
+                <div class="col-md-9">
+                    @Html.TextAreaFor(m => m.AboutUs, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password, new { @class = "col-md-3 control-label" })
+                <div class="col-md-9">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-3 control-label" })
+                <div class="col-md-9">
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Business sectors</label>
+                <div class="col-md-9">
+                    <div style="padding: 7px;">(Choose up to 3 sectors that apply to your company)</div>
+                    <div>
+                        <select id="BusinessSectors" name="BusinessSectors" multiple>
+                            @foreach (var item in (IEnumerable<SelectListItem>)ViewBag.OriginalSectors)
+                            {
+                                <option value=@item.Value>@item.Text</option>
+                            }
+                        </select>
+                        <select multiple id="selectedSectors"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-3 col-md-9">
+                    <input type="submit" class="btn btn-default" value="Register" />
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="@Url.Content("~/Scripts/controls.js")"></script>
+    <script>
+        Controls.multipleListControl('BusinessSectors', 'SelectedIds', 'selectedSectors', 3);
+    </script>
+}
+
+
+

@@ -1,0 +1,257 @@
+﻿body {
+    padding-top: 50px;
+    font-family: 'Candara', 'Microsoft YaHei', Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(236, 236, 236);
+    overflow-x: hidden;
+}
+
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.offerHeader {
+    font-size: 20px;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.content{
+   padding: 40px 0;
+   min-height: 546px;
+}
+
+.header{
+    background-color: #ffffff;
+    border-top: 7px solid rgb(52, 188, 182);
+    border-bottom: none;
+}
+
+.header a {   
+    color: rgb(30, 30, 30)!important;
+}
+
+.header a:hover {
+    color: rgb(61, 173, 168) !important;
+}
+
+.footer{
+    background-color: rgb(30, 30, 30);
+    width: 100%;
+    color: #999;
+    border-top: 1px solid #999;
+    padding: 15px 10px;
+    /*position: fixed;
+    bottom: 0;*/
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+#BusinessSectors, #selectedSectors{
+    background: #ffffff; 
+    background: -moz-linear-gradient(top,  #ffffff 0%, #f7f7f7 56%, #e8e8e8 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(56%,#f7f7f7), color-stop(100%,#e8e8e8)); 
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#f7f7f7 56%,#e8e8e8 100%); 
+    background: -o-linear-gradient(top,  #ffffff 0%,#f7f7f7 56%,#e8e8e8 100%); 
+    background: -ms-linear-gradient(top,  #ffffff 0%,#f7f7f7 56%,#e8e8e8 100%); 
+    background: linear-gradient(to bottom,  #ffffff 0%,#f7f7f7 56%,#e8e8e8 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e8e8e8',GradientType=0 ); 
+    border-radius: 10px;
+    max-width: 600px;
+    min-width: 320px;
+    height: 180px;
+}
+
+#BusinessSectors option, #selectedSectors option {
+    padding: 5px 0 5px 10px;
+}
+
+#BusinessSectors {
+    margin-right: 10px;
+}
+
+.default-form {
+    border: 2px solid rgb(52, 188, 182);
+    padding-top: 20px; 
+    background-color:#fff;
+    margin-bottom: 10px;
+    /*background-image: url('../Files/careerBack.jpg');*/
+    border-radius: 10px;
+}
+
+.default-form .btn[type="submit"], #editButton, .view-appl-btn {
+    background-color:rgb(52, 188, 182);
+    width:150px;
+    border: none;
+    color: #fff;
+}
+
+#expiredButton {
+    width:150px;
+    border: none;
+}
+
+.btn-default:hover {
+    background-color: rgb(187, 236, 234);
+}
+
+.offersList {
+    border: 2px solid rgb(52, 188, 182);
+    margin-right: 20px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(52, 188, 182, 0.1);
+}
+
+.offer-company-name {
+    font-size:20px;
+}
+
+.body-content h4 {
+    text-transform: uppercase;
+    color: rgb(52, 188, 182);
+    border-bottom: 1px solid #999;
+    padding-bottom: 10px;
+    margin: 10px 30px 30px 30px;
+}
+
+
+.container .navbar-nav {
+    text-transform: uppercase;
+}
+
+.container .navbar-brand {
+    font-size: 22px;
+    font-weight: bold;
+    padding-right: 60px;
+}
+
+#register-user-link {
+    margin: 30px 0 10px 30px;
+    color: rgb(52, 188, 182) !important;
+}
+
+ul.application-list .alert {
+    margin: 5px 40px 5px 0px;
+    padding: 5px 15px 0 15px;
+}
+
+ul.company-offers-list {
+    padding: 20px;
+}
+
+ul.company-offers-list li div.row {
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+ul.company-offers-list li div.row a {
+    color: #777;
+}
+
+ul.company-offers-list li div.row span p {
+    margin-top: 6px;
+}
+
+ul.company-offers-list li div.row img {
+    margin-top: 6px;
+}
+
+ul.pagination li a {
+    color: rgb(52, 188, 182);
+}
+
+ul.pagination li.active a {
+    background-color: rgb(52, 188, 182);
+    border-color: rgb(52, 188, 182);
+}
+
+#filter {
+    margin: 0 30px;
+    border-bottom: 1px solid #999;
+}
+
+#filter .control-label {
+    text-transform: uppercase;
+    color: rgb(52, 188, 182);
+}
+
+.default-panel  {
+    padding:0px;
+    border-color: rgb(52, 188, 182);
+
+}
+
+.default-panel .panel-heading {
+    background-color: rgb(52, 188, 182);
+    border-color: rgb(52, 188, 182);
+}
+
+.default-panel .panel-title {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.default-panel p,
+.default-panel .tag-title {
+    margin: 0 30px 10px 40px;
+}
+
+.default-panel h5 {
+    font-weight: bold;
+}
+
+.default-panel p span.text-default {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-right: 10px;
+}
+
+.empty-table {
+    padding: 40px;
+    font-size: 20px;
+}
+
+.filter-applications {
+    padding-top: 15px;
+}
+
+.filter-applications label {
+    vertical-align: top;
+    padding-right: 10px;
+}
+
+.results {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.k-edit-form-container .editor-label {
+    padding-top: 0;
+}
+
+.k-filter-menu input[type="radio"] {
+    margin: 4px;
+}
