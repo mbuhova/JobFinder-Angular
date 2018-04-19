@@ -1,0 +1,39 @@
+﻿@model JobFinder.Web.Areas.Company.Models.BussinessCardViewModels.BussinessCardViewModel
+@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Bussiness card";
+}
+    
+    @Html.DisplayFor(m => m)
+
+    @if (HttpContext.Current.User.IsInRole("Company") && User.Identity.GetUserId() == Model.Id)
+    {
+        <!--<button id="editButton" class="btn btn-primary">Edit</button>
+        <hr />-->
+        <div id="editForm">
+            @Html.Partial("~/Areas/Company/Views/BusinessCard/_EditCardPartial.cshtml")
+        </div>
+    }
+   
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="@Url.Content("~/Scripts/controls.js")"></script>
+    <script>
+        Controls.multipleListControl('BusinessSectors', 'BusinessSectors', 'selectedSectors', 3);
+
+        $('#editForm').hide().addClass('hidden');
+        $('#editButton').click(function () {
+            var form = $('#editForm');
+            if (form.hasClass('hidden')) {
+                form.show();
+                form.removeClass('hidden');
+
+                $('#business-card-container').hide();
+            }
+            else {
+                form.addClass('hidden').hide();
+            }
+        });
+    </script>
+}

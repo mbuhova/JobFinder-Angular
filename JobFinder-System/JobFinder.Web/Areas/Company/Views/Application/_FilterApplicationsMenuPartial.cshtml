@@ -1,0 +1,49 @@
+﻿@{
+    bool approved = (bool)TempData["approved"];
+    bool rejected = (bool)TempData["rejected"];
+    bool notSeen = (bool)TempData["notSeen"];
+}
+
+@using (@Html.BeginForm("GetApplications", "Application", FormMethod.Get, new { @class = "form-horizontal", id = "filter", role = "form" }))
+{
+    <div class="form-group">
+        <label class="col-lg-2 control-label">Filter by</label>
+        <div class="col-lg-10">
+            <div class="radio row filter-applications">
+                <div class="col-md-2">
+                    <label>Approved</label>
+                    @if (approved)
+                    {
+                        <input type="checkbox" name="approved" id="approved" checked="checked">
+                    }
+                    else
+                    {
+                        <input type="checkbox" name="approved" id="approved">
+                    }
+                </div>
+                <div class="col-md-2">
+                    <label>Rejected</label>
+                    @if (rejected)
+                    {
+                        <input type="checkbox" name="rejected" id="rejected" checked="checked">
+                    }
+                    else
+                    {
+                        <input type="checkbox" name="rejected" id="rejected">
+                    }
+                </div>
+                <div class="col-md-2">
+                    <label>Not seen</label>
+                    @if (notSeen)
+                    {
+                        <input type="checkbox" name="notSeen" id="notSeen" checked="checked">
+                    }
+                    else
+                    {
+                        <input type="checkbox" name="notSeen" id="notSeen">
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
