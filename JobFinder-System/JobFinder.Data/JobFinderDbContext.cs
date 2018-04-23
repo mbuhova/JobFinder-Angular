@@ -8,7 +8,7 @@
     public class JobFinderDbContext : IdentityDbContext<User>
     {
         public JobFinderDbContext()
-            : base("JobFinderConnection")
+            : base("JobFinderAzureConnection")  // JobFinderConnection
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<JobFinderDbContext, Configuration>());
         }
